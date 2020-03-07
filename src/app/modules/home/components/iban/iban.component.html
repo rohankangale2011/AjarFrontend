@@ -1,0 +1,17 @@
+<div class="iban-container p-t-s p-b-s">
+  <form (submit)="getBankDetails()">
+    <div class="iban relative">
+      <label>IBan</label>
+      <input type="text" name="iban" [(ngModel)]="iban" #ibanInput (keyup)="trackChange($event)" autocomplete="off" />
+      <img class="absolute" [src]="bankDetails.bank && bankDetails.logo ? 'assets/images/tick.png' : 'assets/images/wrong.png'" />
+    </div>
+  </form>
+  <div class="bank-details flex-container justify-between">
+    <div class="bank">
+      <span class="name bold">{{bankDetails.bank}}</span>
+    </div>
+    <div>
+      <img [src]="bankDetails.logo" />
+    </div>
+  </div>
+</div>

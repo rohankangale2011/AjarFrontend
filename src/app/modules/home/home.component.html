@@ -1,0 +1,25 @@
+<div class="home-container">
+  <app-title></app-title>
+  <div class="data-container-wrapper">
+    <div class="balance-check text-right p-b-xs">
+      <label class="bold">Balance</label>
+      <span>{{ currentBalance }}</span>
+    </div>
+    <div class="data-container">
+      <app-iban
+        [bankDetails]="bankDetails"
+        (getIBANSpecification)="getIBANSpecification($event)"
+        (getBankSpecification)="getBankSpecification($event)"
+      ></app-iban>
+      <div [class]="{'section-loader': isBankLoaderVisible}"></div>
+      <app-amount
+        *ngIf="isBankDetailsFound"
+        [currencyType]="currencyType"
+        [balance]="currentBalance"
+        [isAmountLoaderVisible]="isAmountLoaderVisible"
+        [setDefaultAmount]="setDefaultAmount"
+        (transferAmountInit)="transferAmountInit($event)"
+      ></app-amount>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+.amount-container {
+  .amount {
+    flex: 0 0 75%;
+    label {
+      display: block;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 16px;
+      padding: 5px 0;
+    }
+    input {
+      font-size: 16px;
+      padding: 10px;
+      border: 1.5px solid #bbb;
+      width: 96%;
+    }
+    button {
+      top: 29px;
+      left: 0;
+      padding: 11px;
+      border: 2px solid #bbb;
+    }
+  }
+  .chart {
+    flex: 0 0 20%;
+    padding-left: 6%;
+  }
+  .option-container {
+    button {
+      cursor: pointer;
+      &:disabled {
+        border: none;
+        background: transparent;
+        cursor: default;
+      }
+    }
+    .loader {
+      right: -18px;
+      bottom: 8px;
+    }
+  }
+}

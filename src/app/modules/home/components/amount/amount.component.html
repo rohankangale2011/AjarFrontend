@@ -1,0 +1,17 @@
+<div class="amount-container p-t-s p-b-s">
+  <div class="flex-container justify-between">
+    <div class="amount relative">
+      <label>Amount</label>
+      <input type="number" class="text-right" [(ngModel)]="amount" (input)="trackAmount($event)" />
+      <button class="absolute">{{currencyType}}</button>
+    </div>
+    <div class="chart flex-container justify-between">
+      <app-circle-graph [amountPercent]="amountPercent"></app-circle-graph>
+    </div>
+  </div>
+  <div class="option-container flex-container justify-between relative">
+    <button class="btn">Cancel</button>
+    <button class="btn" [disabled]="isTransferAllowed" (click)="transferAmount()">Transfer</button>
+    <div class="loader absolute" [class]="{'section-loader': isAmountLoaderVisible}"></div>
+  </div>{{toastMessage}}
+</div>
